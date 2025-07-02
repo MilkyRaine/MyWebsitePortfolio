@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+       <nav>
+    <img src="flowerlogo.png" alt="Logo" class="nav-logo">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+    </header>
+    <main class="contact-content">
+   <h1>Send us a feedback</h1>
+<button id="proceedBtn">Proceed</button>
+<div id="feedbackForm" style="display: none; margin-top: 20px;">
+    <form id="feedbackFormElement">
+        <label for="name">Your Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="feedback">Your Feedback:</label><br>
+        <textarea id="feedback" name="feedback" rows="4" cols="40" required></textarea><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="thankYouMessage" style="display: none; margin-top: 20px; color: #e49d9d; font-weight: bold;">
+        Thank you for your feedback!
+    </div>
+</div>
+ <div class="contact-info">
+        <div class="image-contact">
+            <img src="phone.png" alt="Image 1">
+            <p class="image-caption">+63 945 400 5424</p>
+        </div>
+        <div class="image-contact">
+            <img src="email.png" alt="Image 3">
+            <p class="image-caption">milkyraineperezbarcelona@gmail.com</p>
+        </div>
+         <div class="image-contact">
+            <img src="fb.png" alt="Image 2">
+            <p class="image-caption">Loraine Barcelona</p>
+        </div>
+</main>
+<script>
+    document.getElementById("proceedBtn").addEventListener("click", function () {
+        document.getElementById("feedbackForm").style.display = "block";
+        this.style.display = "none";
+    });
+
+    document.getElementById("feedbackFormElement").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        document.getElementById("feedbackFormElement").reset();
+
+        document.getElementById("thankYouMessage").style.display = "block";
+    });
+</script>
+</body>
+</html>
